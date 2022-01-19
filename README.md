@@ -5,7 +5,7 @@ This website consists of a random password generator that generates password bas
 ## Usage
 All that is needed to be done is load the site, click "generate password", and then answer the prompts based on password desire. The password will then be displayed and is ready to be copied and used. 
 
-    ![First Image](assets/images/mainPage.png)
-    ![Second Image](assets/images/usedImage.png)
+![First Image](assets/images/mainPage.png)
+![Second Image](assets/images/usedImage.png)
 
 The website can be visited through the [link here!](https://anisshadh.github.io/Challenge3/)
