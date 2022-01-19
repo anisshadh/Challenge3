@@ -21,7 +21,7 @@ generateBtn.addEventListener("click", writePassword);
 var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var numericValue = '0123456789'.split('');
-var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", ">", "?", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 //need to define generatePassword function for ths project
 
 function generatePassword() {
@@ -83,8 +83,6 @@ function generatePassword() {
     console.log(passwordCharacter);
 
 
-
-  
   var password = "";
 
   for (var i = 0; i < passwordLength; i++) {
