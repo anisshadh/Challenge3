@@ -21,12 +21,10 @@ generateBtn.addEventListener("click", writePassword);
 var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var numericValue = '0123456789'.split('');
-var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", ">", "?", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 //need to define generatePassword function for ths project
 
-//delete cosole in the end
 function generatePassword() {
-  console.log("this is a button test"); //delete later
   //checking password length
   var passwordLength = window.prompt("What length should your password be? Please type a number between 8 and 128");
   console.log(passwordLength);
@@ -34,7 +32,6 @@ function generatePassword() {
       generatePassword();
     }
   
-  var chooseCriteria = function () {
         //does it have uppercase value?
     var upperCasePresent = window.confirm ("Will it contain uppercase letters?");
 
@@ -49,19 +46,51 @@ function generatePassword() {
     
     if (!upperCasePresent && !lowerCasePresent && !numbersPresent && !specialCharactersPresent) {
       window.alert("Please select at least one criteria");
-      return chooseCriteria();
+          //does it have uppercase value?
+        var upperCasePresent = window.confirm ("Will it contain uppercase letters?");
+
+        //does it have lowercase value?
+        var lowerCasePresent = window.confirm ("Will it contain lowercase letters?");
+
+        //does it have numeric value?
+        var numbersPresent = window.confirm ("Will it contain numbers?");
+
+        //does it have special characters?
+        var specialCharactersPresent = window.confirm ("Will it contain special characters?");
+      
     }
+
+
+    // updating passwordCharacter based on user response
+    var passwordCharacter = [];
+
+    if (upperCasePresent) {
+      passwordCharacter = passwordCharacter.concat(upperCase);
+    }
+
+    if (lowerCasePresent) {
+      passwordCharacter = passwordCharacter.concat(lowerCase);
+    }
+
+    if (numbersPresent) {
+      passwordCharacter = passwordCharacter.concat(numericValue);
+    }
+
+    if (specialCharactersPresent) {
+      passwordCharacter = passwordCharacter.concat(specialCharacter);
+    }
+
+    console.log(passwordCharacter);
+
+
+
+  
+  var password = "";
+
+  for (var i = 0; i < passwordLength; i++) {
+    password += passwordCharacter[Math.floor(Math.random() * passwordCharacter.length)];
   }
-  chooseCriteria();
-  
-  
-  // var password = "";
-  // //password generator loop
-  // for (let i = 0; i <= passwordLength; i++) {
 
-  // }
-
-  //final return to display password in box
   return password;
 }
 
@@ -75,3 +104,31 @@ function generatePassword() {
 // 4. Assign password into password variable to be displayed
 
 // var password = (upperCasePresent, lowerCasePresent, numbersPresent, specialCharactersPresent); 
+
+/*
+var password = "";
+  var characterSelector = [];
+  if (upperCasePresent) {
+    characterSelector.push(upperCase);
+  }
+  if (lowerCasePresent) {
+    characterSelector.push(lowerCase);
+  }
+  if (numbersPresent) {
+    characterSelector.push(numericValue);
+  }
+  if (specialCharactersPresent) {
+    characterSelector.push(specialCharacter);
+  }
+
+  for (let i = 0; i < passwordLength; i++) {
+    //   Pick one character type (UpperCase, LowerCase, Numbers, Special Characteres whichever are true)
+    var
+
+    function getRandomInt(max) {
+      max = Math.floor(max);
+      return Math.floor(Math.random() * max);
+    }
+
+    */
+   
