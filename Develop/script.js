@@ -33,19 +33,36 @@ function generatePassword() {
     if (passwordLength < 8 || passwordLength > 128) {
       generatePassword();
     }
-  //does it have uppercase value?
-  var upperCasePresent = window.confirm ("Will it contain uppercase letters?");
-
-  //does it have lowercase value?
-  var lowerCasePresent = window.confirm ("Will it contain lowercase letters?");
-
-  //does it have numeric value?
-  var numbersPresent = window.confirm ("Will it contain numbers?");
-
-  //does it have special characters?
-  var specialCharactersPresent = window.confirm ("Will it contain special characters?");
   
-  return "the final password is returned";
+  var chooseCriteria = function () {
+        //does it have uppercase value?
+    var upperCasePresent = window.confirm ("Will it contain uppercase letters?");
+
+    //does it have lowercase value?
+    var lowerCasePresent = window.confirm ("Will it contain lowercase letters?");
+
+    //does it have numeric value?
+    var numbersPresent = window.confirm ("Will it contain numbers?");
+
+    //does it have special characters?
+    var specialCharactersPresent = window.confirm ("Will it contain special characters?");
+    
+    if (!upperCasePresent && !lowerCasePresent && !numbersPresent && !specialCharactersPresent) {
+      window.alert("Please select at least one criteria");
+      return chooseCriteria();
+    }
+  }
+  chooseCriteria();
+  
+  
+  // var password = "";
+  // //password generator loop
+  // for (let i = 0; i <= passwordLength; i++) {
+
+  // }
+
+  //final return to display password in box
+  return password;
 }
 
 //1. Critera prompts for passwords in sequence
